@@ -129,7 +129,7 @@ function Nav() {
       <span style={{ fontFamily: 'var(--mono)', fontSize: '0.8rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>
         DAQ
       </span>
-      <div style={{ display: 'flex', gap: '2rem' }}>
+      <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         {['work', 'skills', 'about'].map(s => (
           <a key={s} href={`#${s}`} style={{
             fontFamily: 'var(--mono)',
@@ -145,6 +145,7 @@ function Nav() {
           >{s}</a>
         ))}
         
+        <a 
           href="https://github.com/Gotkissss"
           target="_blank"
           rel="noreferrer"
@@ -178,7 +179,6 @@ function Hero() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* grid background */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         backgroundImage: 'linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px)',
@@ -266,7 +266,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* bottom label */}
       <div style={{
         position: 'absolute',
         bottom: '2rem',
