@@ -4,11 +4,11 @@ const PROJECTS = [
   {
     id: 'calculator',
     slug: '01',
-    title: 'Tron Calculator',
+    title: 'Calculadora Tron',
     stack: ['React', 'TypeScript', 'Vite', 'Vitest', 'Storybook'],
     description:
-      'Calculator with a Tron-inspired aesthetic built in React and TypeScript. Developed following TDD: all tests were written first, then the implementation. Includes Storybook documentation for every component and a custom hook that encapsulates all calculator logic.',
-    highlights: ['TDD workflow (red → green → refactor)', 'Component isolation via Storybook', 'useCalculator hook with full unit coverage'],
+      'Calculadora con estética inspirada en Tron, construida en React y TypeScript. Desarrollada siguiendo TDD: todas las pruebas se escribieron primero, luego la implementación. Incluye documentación en Storybook para cada componente y un hook personalizado que encapsula toda la lógica de la calculadora.',
+    highlights: ['Flujo TDD (rojo → verde → refactor)', 'Aislamiento de componentes con Storybook', 'Hook useCalculator con cobertura total de pruebas'],
     url: 'https://gotkissss.github.io/Proyecto-2---Calculadora-/',
     repo: 'https://github.com/Gotkissss/Proyecto-2---Calculadora-',
   },
@@ -18,19 +18,19 @@ const PROJECTS = [
     title: 'Snake — React',
     stack: ['React', 'JavaScript', 'CSS'],
     description:
-      'Classic Snake game implemented entirely in a single HTML file using React via CDN and Babel. Component-driven architecture with clear separation between game logic (Game), rendering (Board, Snake, Food), and UI (Score). Speed increases every 50 points across 4 levels.',
-    highlights: ['Zero build step — React via CDN', 'Component tree with unidirectional data flow', 'Game loop with useEffect and dynamic interval speed'],
+      'Juego clásico de Snake implementado en un solo archivo HTML usando React vía CDN y Babel. Arquitectura orientada a componentes con separación clara entre lógica de juego (Game), renderizado (Board, Snake, Food) e interfaz (Score). La velocidad aumenta cada 50 puntos en 4 niveles.',
+    highlights: ['Sin proceso de build — React vía CDN', 'Árbol de componentes con flujo de datos unidireccional', 'Game loop con useEffect e intervalo de velocidad dinámica'],
     url: 'https://gotkissss.github.io/laboratorio-7---React-/',
     repo: 'https://github.com/Gotkissss/laboratorio-7---React-',
   },
   {
     id: 'password',
     slug: '03',
-    title: 'Password Strength Meter',
+    title: 'Medidor de Fortaleza de Contraseña',
     stack: ['React', 'Vite', 'Vitest', 'React Testing Library'],
     description:
-      'Password strength evaluator built with a strict TDD approach. Pure logic isolated in a utility function tested independently from the component. 100% coverage with edge cases, boundary conditions, and accessibility tests.',
-    highlights: ['Pure logic separated from React component', 'Edge case coverage: boundaries, empty input, symbols', 'Accessible by label via React Testing Library'],
+      'Evaluador de fortaleza de contraseñas construido con un enfoque estricto de TDD. Lógica pura aislada en una función utilitaria probada independientemente del componente. Cobertura del 100% con casos borde, condiciones límite y pruebas de accesibilidad.',
+    highlights: ['Lógica pura separada del componente React', 'Cobertura de casos borde: límites, entrada vacía, símbolos', 'Accesible por etiqueta con React Testing Library'],
     url: 'https://gotkissss.github.io/password-strength-meter/',
     repo: 'https://github.com/Gotkissss/password-strength-meter',
   },
@@ -40,8 +40,8 @@ const PROJECTS = [
     title: 'Series Tracker — Frontend',
     stack: ['HTML', 'CSS', 'JavaScript', 'Vanilla ES Modules'],
     description:
-      'Full-featured series tracking client built with zero frameworks. Native ES modules split across api.js, ui.js, and app.js. Communicates with a REST API backend, handles image uploads, real-time search, multi-field sorting, pagination, and CSV export generated client-side with Blob.',
-    highlights: ['Module architecture without a bundler', 'CSV export via Blob API — no libraries', 'Real-time search + sort + pagination against a live API'],
+      'Cliente completo para rastrear series, construido sin frameworks. Módulos ES nativos divididos en api.js, ui.js y app.js. Se comunica con una API REST, maneja subida de imágenes, búsqueda en tiempo real, ordenamiento por múltiples campos, paginación y exportación CSV generada en el cliente con Blob.',
+    highlights: ['Arquitectura modular sin bundler', 'Exportación CSV vía Blob API — sin librerías', 'Búsqueda + orden + paginación en tiempo real contra una API activa'],
     url: 'https://bespoke-sherbet-009345.netlify.app',
     repo: 'https://github.com/Gotkissss',
   },
@@ -51,8 +51,8 @@ const SKILLS = {
   Frontend: ['React', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Vite'],
   Testing: ['Vitest', 'React Testing Library', 'TDD', 'Storybook'],
   Backend: ['Go', 'REST APIs', 'SQLite', 'TCP server (net package)'],
-  Security: ['Ethical Hacking', 'Penetration Testing', 'CTF', 'OSINT'],
-  Tools: ['Git', 'GitHub Actions', 'Netlify', 'GitHub Pages'],
+  Seguridad: ['Ethical Hacking', 'Penetration Testing', 'CTF', 'OSINT'],
+  Herramientas: ['Git', 'GitHub Actions', 'Netlify', 'GitHub Pages'],
 }
 
 function useInView(ref, options = {}) {
@@ -130,8 +130,8 @@ function Nav() {
         DAQ
       </span>
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        {['work', 'skills', 'about'].map(s => (
-          <a key={s} href={`#${s}`} style={{
+        {[['trabajo', 'work'], ['habilidades', 'skills'], ['sobre mí', 'about']].map(([label, id]) => (
+          <a key={id} href={`#${id}`} style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.75rem',
             color: 'var(--muted)',
@@ -142,10 +142,9 @@ function Nav() {
           }}
           onMouseEnter={e => e.target.style.color = 'var(--fg)'}
           onMouseLeave={e => e.target.style.color = 'var(--muted)'}
-          >{s}</a>
+          >{label}</a>
         ))}
-        
-        <a 
+        <a
           href="https://github.com/Gotkissss"
           target="_blank"
           rel="noreferrer"
@@ -195,7 +194,7 @@ function Hero() {
           textTransform: 'uppercase',
           marginBottom: '1.5rem',
         }}>
-          {'>'} init portfolio.js{tick % 2 === 0 ? '▋' : ' '}
+          {'>'} init portafolio.js{tick % 2 === 0 ? '▋' : ' '}
         </p>
 
         <h1 style={{
@@ -230,9 +229,9 @@ function Hero() {
           lineHeight: 1.7,
           marginBottom: '3rem',
         }}>
-          CS student at Universidad del Valle de Guatemala.
-          Frontend developer with a background in ethical hacking —
-          I build interfaces that are clean on the surface and solid underneath.
+          Estudiante de Ciencias de la Computación en la Universidad del Valle de Guatemala.
+          Desarrollador frontend con trasfondo en ethical hacking —
+          construyo interfaces limpias por fuera y sólidas por dentro.
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -248,7 +247,7 @@ function Hero() {
           }}
           onMouseEnter={e => e.target.style.background = 'var(--accent)'}
           onMouseLeave={e => e.target.style.background = 'var(--fg)'}
-          >VIEW WORK</a>
+          >VER TRABAJO</a>
           <a href="https://github.com/Gotkissss" target="_blank" rel="noreferrer" style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.8rem',
@@ -277,7 +276,7 @@ function Hero() {
         writingMode: 'vertical-rl',
         opacity: 0.5,
       }}>
-        SCROLL TO EXPLORE
+        DESLIZAR PARA EXPLORAR
       </div>
     </section>
   )
@@ -356,7 +355,7 @@ function ProjectCard({ project, index }) {
             letterSpacing: '0.1em',
             borderBottom: '1px solid var(--accent)',
             paddingBottom: '1px',
-          }}>LIVE ↗</a>
+          }}>EN VIVO ↗</a>
           <a href={project.repo} target="_blank" rel="noreferrer" style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.75rem',
@@ -378,7 +377,7 @@ function ProjectCard({ project, index }) {
           textTransform: 'uppercase',
           marginBottom: '1rem',
           opacity: 0.6,
-        }}>// highlights</p>
+        }}>// destacados</p>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
           {project.highlights.map((h, i) => (
             <li key={i} style={{
@@ -424,13 +423,13 @@ function Work() {
           fontWeight: 700,
           color: 'var(--fg)',
           letterSpacing: '-0.02em',
-        }}>Selected Work</h2>
+        }}>Proyectos Seleccionados</h2>
         <span style={{
           fontFamily: 'var(--mono)',
           fontSize: '0.75rem',
           color: 'var(--muted)',
           letterSpacing: '0.1em',
-        }}>({PROJECTS.length} projects)</span>
+        }}>({PROJECTS.length} proyectos)</span>
       </div>
       {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
       <div style={{ borderTop: '1px solid var(--line)' }} />
@@ -459,7 +458,7 @@ function Skills() {
           opacity: inView ? 1 : 0,
           transform: inView ? 'none' : 'translateY(20px)',
           transition: 'all 0.5s ease',
-        }}>Stack</h2>
+        }}>Tecnologías</h2>
 
         <div style={{
           display: 'grid',
@@ -519,7 +518,7 @@ function About() {
             color: 'var(--fg)',
             letterSpacing: '-0.02em',
             marginBottom: '2rem',
-          }}>About</h2>
+          }}>Sobre mí</h2>
           <p style={{
             fontFamily: 'var(--sans)',
             fontSize: '1rem',
@@ -528,10 +527,10 @@ function About() {
             fontWeight: 300,
             marginBottom: '1.25rem',
           }}>
-            I'm a Computer Science student at Universidad del Valle de Guatemala,
-            with a double focus in frontend development and ethical hacking.
-            That combination means I think about interfaces differently —
-            not just how they look, but how they behave under pressure.
+            Soy estudiante de Ciencias de la Computación en la Universidad del Valle de Guatemala,
+            con doble enfoque en desarrollo frontend y ethical hacking.
+            Esa combinación hace que piense en las interfaces de forma diferente —
+            no solo cómo se ven, sino cómo se comportan bajo presión.
           </p>
           <p style={{
             fontFamily: 'var(--sans)',
@@ -541,9 +540,9 @@ function About() {
             fontWeight: 300,
             marginBottom: '1.25rem',
           }}>
-            I'm most comfortable in React, but I care about understanding what's underneath.
-            Two of my projects — the series tracker frontend and the snake game — were built
-            without frameworks on purpose, to stay close to the platform.
+            Me siento más cómodo en React, pero me importa entender lo que hay debajo.
+            Dos de mis proyectos — el frontend del series tracker y el juego snake — fueron construidos
+            sin frameworks a propósito, para mantenerme cerca de la plataforma.
           </p>
           <p style={{
             fontFamily: 'var(--sans)',
@@ -552,8 +551,8 @@ function About() {
             lineHeight: 1.8,
             fontWeight: 300,
           }}>
-            Currently building skills in Go for backend systems, and expanding into
-            full-stack work where security considerations are part of the design from day one.
+            Actualmente desarrollando habilidades en Go para sistemas backend, y expandiéndome hacia
+            trabajo fullstack donde las consideraciones de seguridad son parte del diseño desde el primer día.
           </p>
         </div>
         <div>
@@ -564,17 +563,17 @@ function About() {
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
-          }}>// currently</p>
+          }}>// actualmente</p>
           {[
-            ['Status', 'Open to internships & junior roles'],
-            ['Location', 'Guatemala City, GT'],
-            ['Focus', 'Frontend + Security'],
-            ['Learning', 'Go, full-stack architecture'],
+            ['Estado', 'Abierto a prácticas y puestos junior'],
+            ['Ubicación', 'Ciudad de Guatemala, GT'],
+            ['Enfoque', 'Frontend + Seguridad'],
+            ['Aprendiendo', 'Go, arquitectura fullstack'],
             ['GitHub', '@Gotkissss'],
           ].map(([label, value]) => (
             <div key={label} style={{
               display: 'grid',
-              gridTemplateColumns: '100px 1fr',
+              gridTemplateColumns: '110px 1fr',
               gap: '1rem',
               borderBottom: '1px solid var(--line)',
               padding: '0.75rem 0',
@@ -637,7 +636,7 @@ function Footer() {
         color: 'var(--muted)',
         letterSpacing: '0.08em',
         opacity: 0.5,
-      }}>Built with React + Vite</span>
+      }}>Construido con React + Vite</span>
     </footer>
   )
 }
